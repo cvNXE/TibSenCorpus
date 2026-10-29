@@ -8,13 +8,20 @@ The release contains **157,527 records** with Chinese text, Tibetan translation,
 
 TibSenCorpus is provided for **non-commercial research only**. The workbook is distributed as a password-protected 7z archive because it contains sensitive content. The password and unencrypted data are not published in this repository.
 
-1. Download all three encrypted archive volumes to the same directory:
+1. Read [DATA_ACCESS.md](DATA_ACCESS.md) and download the blank
+   [Dataset Release Agreement (PDF)](agreements/TibSenCorpus_Dataset_Release_Agreement.pdf).
+2. Type your information and research purpose into the form, print both pages, and **sign by hand**.
+   Student applicants must also obtain their supervisor's or principal investigator's signature.
+3. Scan both pages into one legible PDF and email it to **cvlina@mail.nwpu.edu.cn** from
+   your institutional email address, with the subject **TibSenCorpus Data Access Request**.
+   If you do not have an institutional address, contact the maintainer before submitting.
+   **Do not upload signed agreements to public GitHub issues, pull requests, or commits.**
+4. The dataset maintainer reviews the signed application and sends the extraction password by email
+   if access is approved. An email-only promise without the signed agreement is not a complete application.
+5. Download all three encrypted archive volumes to the same directory:
    [Part 1](https://raw.githubusercontent.com/cvNXE/TibSenCorpus/main/data/TibSenCorpus_S0-S4_v1.0.0.7z.001),
    [Part 2](https://raw.githubusercontent.com/cvNXE/TibSenCorpus/main/data/TibSenCorpus_S0-S4_v1.0.0.7z.002), and
    [Part 3](https://raw.githubusercontent.com/cvNXE/TibSenCorpus/main/data/TibSenCorpus_S0-S4_v1.0.0.7z.003).
-2. Read [DATA_ACCESS.md](DATA_ACCESS.md).
-3. Email **cvlina@mail.nwpu.edu.cn**, preferably from your institutional email address, with the subject **TibSenCorpus Data Access Request**. Include your name, affiliation, intended research use, and confirmation that you agree to the non-commercial research access terms.
-4. The dataset maintainer reviews the request and sends the extraction password by email if access is approved.
 
 Suggested email:
 
@@ -26,12 +33,19 @@ Affiliation:
 Institutional email:
 Intended research use:
 
-I have read DATA_ACCESS.md and agree to use TibSenCorpus only for
-non-commercial research. I will not redistribute the data or the
-extraction password, or use the dataset for commercial purposes.
+Please find attached my completed and hand-signed TibSenCorpus Dataset
+Release Agreement (both pages). I request access for the research
+purpose described in the agreement.
+
+Attachment: TibSenCorpus_Agreement_[ApplicantName].pdf
 ```
 
 Please do not post access requests containing personal details or share the password in public issues. This repository does not automatically send email replies or grant access.
+
+The agreement has fillable information fields and blank handwritten-signature lines.
+An [editable text version](agreements/TibSenCorpus_Dataset_Release_Agreement.md) and
+[PDF-generation script](scripts/build_agreement.py) are also provided. Signatures must be supplied
+by the actual applicant and, for students, the supervisor/PI; no signatures are prefilled.
 
 ## Integrity and extraction
 
@@ -47,8 +61,14 @@ The release preserves the confirmed final workbook without altering its contents
 
 ## Access-policy references
 
-The access workflow follows established dataset-sharing practices: [DocTamper](https://github.com/qcf-568/DocTamper) uses non-commercial access with email password requests; [VisualSem](https://github.com/iacercalixto/visualsem) distributes password-protected data with institutional-email requests; and [FERV39k](https://github.com/wangyanckxx/FERV39k) requests researcher information and non-commercial-use commitments. Their dataset-specific licences are not copied or applied to TibSenCorpus.
+The signed-application workflow is informed by the public
+[SUSTech1K release agreement](https://lidargait.github.io/static/resources/SUSTech1KAgreement.pdf)
+and [EPHOIE access procedure](https://github.com/HCIILAB/EPHOIE). Non-commercial email/password
+access is also documented by [DocTamper](https://github.com/qcf-568/DocTamper) and
+[VisualSem](https://github.com/iacercalixto/visualsem). These references inform the workflow;
+their dataset-specific licences, institutional claims, and signed personal information are not
+copied or applied to TibSenCorpus.
 
 ## 中文说明
 
-本数据集仅供非商业学术研究使用。请下载加密压缩包，并向 **cvlina@mail.nwpu.edu.cn** 发送申请邮件，说明姓名、单位、研究用途，并确认遵守 [数据获取与使用条款](DATA_ACCESS.md)。审核通过后，维护者将通过邮件提供解压密码。请勿公开传播明文数据或密码。
+本数据集仅供非商业学术研究使用。申请人须下载并填写 [空白使用协议](agreements/TibSenCorpus_Dataset_Release_Agreement.pdf)，打印后亲笔签名；学生申请人还须由导师或项目负责人签名。将两页完整扫描为一个 PDF，以邮件附件发送至 **cvlina@mail.nwpu.edu.cn**，审核通过后获取解压密码。仅发送邮件承诺不能替代签署协议。签署后的协议含个人信息和签名，**请勿上传公开 GitHub 仓库或 Issue**。明文数据和密码同样不得公开传播。

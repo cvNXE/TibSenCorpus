@@ -13,3 +13,9 @@ tmp/
 *password*
 *secret*
 __pycache__/
+# Completed applications contain personal information and handwritten signatures.
+signed_agreements/
+applications/
+TibSenCorpus_Agreement_*.pdf
+*_signed.pdf
+*_signed.PDF

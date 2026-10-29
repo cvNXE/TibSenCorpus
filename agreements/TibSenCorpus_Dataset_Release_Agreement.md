@@ -1,0 +1,58 @@
+# TibSenCorpus Dataset Release and Non-commercial Research Agreement
+
+Policy version: 1.1 | 29 October 2026
+
+## Purpose and release
+
+TibSenCorpus is a Tibetan-Chinese parallel corpus for five-level sensitive content grading (S0-S4). This agreement records the applicant's research purpose and commitment to the conditions below. Access to the unencrypted data is granted only after the maintainer has reviewed the completed and signed application.
+
+## Conditions of use
+
+1. **Non-commercial research.** Use the dataset only for the non-commercial research described in this application. Do not use it in commercial products or services, or sell, resell, or otherwise commercially exploit the data.
+2. **No redistribution.** Do not publish, re-upload, or pass the unencrypted dataset, subsets, record-level copies, or extraction password to third parties. Keep access within the approved research project. Other research groups must apply independently; changes to the approved scope must be agreed with the maintainer.
+3. **Security and sensitive content.** Store and process the data in a protected research environment. Do not upload plaintext data or the password to public repositories or services that expose them. Do not attempt to identify individuals or publish sensitive source passages or identifying information.
+4. **Research processing and reporting.** Preprocessing, tokenization, model training, evaluation, and internal research copies are permitted for the approved non-commercial project. Papers, code, aggregate statistics, and visualizations may be shared only without exposing or enabling reconstruction of restricted records.
+5. **Attribution and source rights.** Acknowledge TibSenCorpus and link to its repository in research outputs that use the data. Rights in third-party source material remain with the respective rights holders; access does not transfer those rights or authorize uses beyond these research conditions.
+6. **Responsible use.** Treat sensitivity levels as context-dependent research annotations, not legal determinations. Do not use predictions as the sole basis for consequential decisions about people; high-risk uses require human review and compliance with applicable data-protection requirements.
+
+## Submission
+
+Type the information on page 2, print both pages, sign by hand, and scan the complete agreement into one legible PDF. Send it from your institutional email address to cvlina@mail.nwpu.edu.cn with the subject 'TibSenCorpus Data Access Request'. If you do not have an institutional address, contact the maintainer before submitting. The password will be sent by email after approval. Do not submit signed forms through public GitHub issues, pull requests, or commits.
+
+## Applicant information
+
+Student applicants must obtain their supervisor's or principal investigator's signature. Other applicants may act as the responsible researcher themselves and do not need a separate supervisor signature. Provide a contact email and institutional affiliation; do not include identity-document numbers.
+
+| Information | Applicant / point of contact | Responsible researcher / supervisor |
+| --- | --- | --- |
+| Full name | | |
+| Institution | | |
+| Department / lab | | |
+| Position / role | | |
+| Institutional email | | |
+| Academic webpage | | |
+
+Project title: ____________________
+
+Research purpose and planned use: ____________________
+
+## Declaration and signatures
+
+I have read both pages and agree to the conditions of use. The information provided is accurate, and the dataset will be used only for the stated non-commercial research. I will keep the data and password restricted as described above. A signed application is subject to review and is not itself approval.
+
+Applicant handwritten signature: ____________________
+
+Date (YYYY-MM-DD): ____________________
+
+Supervisor / PI handwritten signature (required for students): ____________________
+
+Date (YYYY-MM-DD): ____________________
+
+## Workflow references
+
+- [SUSTech1K release agreement](https://lidargait.github.io/static/resources/SUSTech1KAgreement.pdf)
+- [EPHOIE access procedure](https://github.com/HCIILAB/EPHOIE)
+
+These are workflow references, not licences applied to TibSenCorpus. The supplied signed example is not part of the public release.
+
+Repository: https://github.com/cvNXE/TibSenCorpus
