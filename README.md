@@ -8,7 +8,10 @@ The release contains **157,527 records** with Chinese text, Tibetan translation,
 
 TibSenCorpus is provided for **non-commercial research only**. The workbook is distributed as a password-protected 7z archive because it contains sensitive content. The password and unencrypted data are not published in this repository.
 
-1. Download the encrypted archive from [Releases](https://github.com/cvNXE/TibSenCorpus/releases).
+1. Download all three encrypted archive volumes to the same directory:
+   [Part 1](https://raw.githubusercontent.com/cvNXE/TibSenCorpus/main/data/TibSenCorpus_S0-S4_v1.0.0.7z.001),
+   [Part 2](https://raw.githubusercontent.com/cvNXE/TibSenCorpus/main/data/TibSenCorpus_S0-S4_v1.0.0.7z.002), and
+   [Part 3](https://raw.githubusercontent.com/cvNXE/TibSenCorpus/main/data/TibSenCorpus_S0-S4_v1.0.0.7z.003).
 2. Read [DATA_ACCESS.md](DATA_ACCESS.md).
 3. Email **cvlina@mail.nwpu.edu.cn**, preferably from your institutional email address, with the subject **TibSenCorpus Data Access Request**. Include your name, affiliation, intended research use, and confirmation that you agree to the non-commercial research access terms.
 4. The dataset maintainer reviews the request and sends the extraction password by email if access is approved.
@@ -32,7 +35,13 @@ Please do not post access requests containing personal details or share the pass
 
 ## Integrity and extraction
 
-Compare the downloaded archive's SHA-256 value with [SHA256SUMS.txt](SHA256SUMS.txt) before extraction. Use a 7z-compatible application supporting AES-256 encryption and enter the password supplied by the maintainer. The archive also encrypts filenames.
+Compare the downloaded volumes' SHA-256 values with [SHA256SUMS.txt](SHA256SUMS.txt) before extraction. Keep all three volumes together, open the `.7z.001` file in 7-Zip or another compatible application, and enter the password supplied by the maintainer. The archive uses AES-256 encryption and also encrypts filenames.
+
+Alternatively, [download_dataset.py](download_dataset.py) downloads, verifies, and joins the volumes into one encrypted `.7z` file. It uses only the Python standard library and does not require or contain the extraction password:
+
+```bash
+python download_dataset.py --output-dir TibSenCorpus_download
+```
 
 The release preserves the confirmed final workbook without altering its contents. No training checkpoints or test results are included in this data release.
 

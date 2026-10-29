@@ -39,5 +39,22 @@
   "archive_sha256": "57823fc869870a2f4e7ef4acee3372f0ec601d195e172321c49ed963e5ae4bc3",
   "encryption": "7z AES-256, encrypted headers",
   "access": "Non-commercial research; request the password by email.",
-  "contact": "cvlina@mail.nwpu.edu.cn"
+  "contact": "cvlina@mail.nwpu.edu.cn",
+  "volumes": [
+    {
+      "path": "data/TibSenCorpus_S0-S4_v1.0.0.7z.001",
+      "bytes": 15728640,
+      "sha256": "49c1f74b6b50d2d9c280a5c15485afd088dfd1ac44c26b7d690e26add390911f"
+    },
+    {
+      "path": "data/TibSenCorpus_S0-S4_v1.0.0.7z.002",
+      "bytes": 15728640,
+      "sha256": "724b317c18b2e3b67c55f97e8e7e9d75958ff2415cbbb2837e9d674520a99cee"
+    },
+    {
+      "path": "data/TibSenCorpus_S0-S4_v1.0.0.7z.003",
+      "bytes": 12534131,
+      "sha256": "df754dd900c8a5b5698c3cc814d6f4addda475869e7e7024c71903360957f377"
+    }
+  ]
 }

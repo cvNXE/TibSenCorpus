@@ -1,4 +1,4 @@
-# Public repository: documentation only; encrypted data are release assets.
+# Public repository: documentation, downloader, and encrypted volumes only.
 private/
 staging/
 verify/
