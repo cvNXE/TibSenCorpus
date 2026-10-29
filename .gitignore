@@ -1,0 +1,15 @@
+# Public repository: documentation only; encrypted data are release assets.
+private/
+staging/
+verify/
+tmp/
+*.xlsx
+*.xls
+*.csv
+*.tsv
+*.7z
+*.zip
+*.env
+*password*
+*secret*
+__pycache__/
