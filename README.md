@@ -10,7 +10,8 @@ TibSenCorpus is provided for **non-commercial research only**. The workbook is d
 
 1. Read [DATA_ACCESS.md](DATA_ACCESS.md) and download the blank
    [Dataset Release Agreement (PDF)](agreements/TibSenCorpus_Dataset_Release_Agreement.pdf).
-2. Type your information and research purpose into the one-page form, print it, and **sign by hand**.
+2. Complete the simple information table (name, organization, position, institutional email,
+   and one shared homepage field), print the one-page form, and **sign by hand**.
    Student applicants must also obtain their supervisor's or principal investigator's signature.
 3. Scan the complete signed page into one legible PDF and email it to **cvlina@mail.nwpu.edu.cn** from
    your institutional email address, with the subject **TibSenCorpus Data Access Request**.
@@ -28,14 +29,8 @@ Suggested email:
 ```text
 Subject: TibSenCorpus Data Access Request
 
-Name:
-Affiliation:
-Institutional email:
-Intended research use:
-
 Please find attached my completed and hand-signed TibSenCorpus Dataset
-Release Agreement (one page). I request access for the research
-purpose described in the agreement.
+Release Agreement (one page). I request access for non-commercial research.
 
 Attachment: TibSenCorpus_Agreement_[ApplicantName].pdf
 ```

@@ -23,8 +23,8 @@ INTRO = (
     "completed and signed agreement. Applicants agree to the following conditions."
 )
 TERMS = [
-    ("Non-commercial research", "Use the dataset only for the non-commercial research "
-     "described in this application. Do not use it in commercial products or services, "
+    ("Non-commercial research", "Use the dataset only for non-commercial research. "
+     "Do not use it in commercial products or services, "
      "or sell, resell, or otherwise commercially exploit the data."),
     ("No redistribution", "Do not publish, re-upload, or pass the unencrypted dataset, "
      "subsets, record-level copies, or extraction password to third parties. Keep "
@@ -54,13 +54,12 @@ SUBMISSION = (
     "The password is sent after approval. Do not post signed forms publicly."
 )
 ROLES = (
-    "Student applicants must obtain their supervisor's or principal investigator's "
-    "signature. Other applicants may act as the responsible researcher themselves; "
-    "a separate supervisor signature is not required."
+    "Please type the information below. Student applicants must also obtain "
+    "their supervisor's or principal investigator's signature."
 )
 DECLARATION = (
     "I have read and accept the conditions above. The information provided is "
-    "accurate. I will use the data only for the stated non-commercial research "
+    "accurate. I will use the data only for non-commercial research "
     "and keep the data and password restricted to the approved project."
 )
 SOURCES = [
@@ -136,23 +135,23 @@ def make_pdf(path):
     y = section(pdf, "Conditions of use", y)
     for index, (title, body) in enumerate(TERMS, 1):
         y = paragraph(pdf, "<b>" + str(index) + ". " + title + ".</b> " + body, LEFT, y) - 4
-    y = section(pdf, "Applicant information - type before printing", y + 1)
+    y = section(pdf, "Information", y + 1)
     y = paragraph(pdf, ROLES, LEFT, y, style=SMALL) - 6
-    label_width = 91
+    label_width = 115
     column_width = (CONTENT - label_width) / 2
     first = LEFT + label_width
     second = first + column_width
     table_top = y
-    header_height = 23
-    row_height = 21
+    header_height = 27
+    row_height = 24
+    homepage_height = 38
     paragraph(pdf, "Information", LEFT + 4, table_top - 6, label_width - 8, LABEL)
     paragraph(pdf, "Applicant / point of contact", first + 4, table_top - 6, column_width - 8, LABEL)
     paragraph(pdf, "Responsible researcher / supervisor", second + 4, table_top - 6, column_width - 8, LABEL)
-    table_bottom = table_top - header_height - 6 * row_height
+    table_bottom = table_top - header_height - 4 * row_height - homepage_height
     y = table_top - header_height
-    rows = [("Full name", "name"), ("Institution", "institution"),
-            ("Department / lab", "department"), ("Position / role", "position"),
-            ("Institutional email", "email"), ("Academic webpage", "webpage")]
+    rows = [("Name", "name"), ("Organization", "institution"),
+            ("Position", "position"), ("Email address (institutional)", "email")]
     for label, key in rows:
         paragraph(pdf, label, LEFT + 4, y - 6, label_width - 8, SMALL)
         field(pdf, "applicant_" + key, first + 3, y - row_height + 2,
@@ -160,21 +159,19 @@ def make_pdf(path):
         field(pdf, "responsible_" + key, second + 3, y - row_height + 2,
               column_width - 6, row_height - 4, border=False)
         y -= row_height
+    paragraph(pdf, "Homepage of researcher / group / institution", LEFT + 4, y - 6,
+              label_width - 8, SMALL)
+    field(pdf, "homepage", first + 3, table_bottom + 3,
+          CONTENT - label_width - 6, homepage_height - 6, multiline=True, border=False)
     pdf.setStrokeColor(INK)
     pdf.setLineWidth(0.5)
     pdf.rect(LEFT, table_bottom, CONTENT, table_top - table_bottom, fill=0)
-    for x in (first, second):
-        pdf.line(x, table_bottom, x, table_top)
-    for index in range(6):
+    pdf.line(first, table_bottom, first, table_top)
+    pdf.line(second, table_bottom + homepage_height, second, table_top)
+    for index in range(5):
         line_y = table_top - header_height - index * row_height
         pdf.line(LEFT, line_y, RIGHT, line_y)
-    y = table_bottom - 9
-    paragraph(pdf, "Project title", LEFT, y, label_width - 4, LABEL)
-    field(pdf, "project_title", first, y - 16, CONTENT - label_width, 20)
-    y -= 26
-    paragraph(pdf, "Research purpose and planned use", LEFT, y, style=LABEL)
-    field(pdf, "research_purpose", LEFT, y - 45, CONTENT, 32, multiline=True)
-    y -= 53
+    y = table_bottom - 12
     y = paragraph(pdf, DECLARATION, LEFT, y, style=SMALL) - 7
     signature_top = y
     gap = 24
@@ -203,10 +200,10 @@ def make_markdown(path):
     lines.extend(str(i) + ". **" + title + ".** " + body for i, (title, body) in enumerate(TERMS, 1))
     lines += ["", "## Submission", "", SUBMISSION, "", "## Applicant information", "", ROLES, "",
               "| Information | Applicant / point of contact | Responsible researcher / supervisor |",
-              "| --- | --- | --- |", "| Full name | | |", "| Institution | | |",
-              "| Department / lab | | |", "| Position / role | | |", "| Institutional email | | |",
-              "| Academic webpage | | |", "", "Project title: ____________________", "",
-              "Research purpose and planned use: ____________________", "", "## Declaration and signatures",
+              "| --- | --- | --- |", "| Name | | |", "| Organization | | |",
+              "| Position | | |", "| Email address (institutional) | | |", "",
+              "Homepage of researcher / group / institution (one shared field): ____________________",
+              "", "## Declaration and signatures",
               "", DECLARATION, "", "Applicant handwritten signature: ____________________", "",
               "Date (YYYY-MM-DD): ____________________", "",
               "Supervisor / PI handwritten signature (required for students): ____________________", "",

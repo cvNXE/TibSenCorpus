@@ -8,7 +8,7 @@ TibSenCorpus is a Tibetan-Chinese parallel corpus for five-level sensitive conte
 
 ## Conditions of use
 
-1. **Non-commercial research.** Use the dataset only for the non-commercial research described in this application. Do not use it in commercial products or services, or sell, resell, or otherwise commercially exploit the data.
+1. **Non-commercial research.** Use the dataset only for non-commercial research. Do not use it in commercial products or services, or sell, resell, or otherwise commercially exploit the data.
 2. **No redistribution.** Do not publish, re-upload, or pass the unencrypted dataset, subsets, record-level copies, or extraction password to third parties. Keep access within the approved research project. Other research groups must apply independently; changes to the approved scope must be agreed with the maintainer.
 3. **Security and sensitive content.** Store and process the data in a protected research environment. Do not upload plaintext data or the password to public repositories or services that expose them. Do not attempt to identify individuals or publish sensitive source passages or identifying information.
 4. **Research processing and reporting.** Preprocessing, tokenization, model training, evaluation, and internal research copies are permitted for the approved non-commercial project. Papers, code, aggregate statistics, and visualizations may be shared only without exposing or enabling reconstruction of restricted records.
@@ -21,24 +21,20 @@ Complete the form, print and sign by hand, then email a legible scan of this pag
 
 ## Applicant information
 
-Student applicants must obtain their supervisor's or principal investigator's signature. Other applicants may act as the responsible researcher themselves; a separate supervisor signature is not required.
+Please type the information below. Student applicants must also obtain their supervisor's or principal investigator's signature.
 
 | Information | Applicant / point of contact | Responsible researcher / supervisor |
 | --- | --- | --- |
-| Full name | | |
-| Institution | | |
-| Department / lab | | |
-| Position / role | | |
-| Institutional email | | |
-| Academic webpage | | |
+| Name | | |
+| Organization | | |
+| Position | | |
+| Email address (institutional) | | |
 
-Project title: ____________________
-
-Research purpose and planned use: ____________________
+Homepage of researcher / group / institution (one shared field): ____________________
 
 ## Declaration and signatures
 
-I have read and accept the conditions above. The information provided is accurate. I will use the data only for the stated non-commercial research and keep the data and password restricted to the approved project.
+I have read and accept the conditions above. The information provided is accurate. I will use the data only for non-commercial research and keep the data and password restricted to the approved project.
 
 Applicant handwritten signature: ____________________
 

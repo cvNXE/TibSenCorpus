@@ -7,7 +7,7 @@ TibSenCorpus is made available through controlled password distribution for non-
 ## Requesting access
 
 1. Download the blank [TibSenCorpus Dataset Release Agreement](agreements/TibSenCorpus_Dataset_Release_Agreement.pdf).
-2. Type your name, affiliation, institutional email, and research purpose into the form.
+2. Complete the information table: name, organization, position, institutional email, and one shared researcher/group/institution homepage. No separate project title or research-plan form is required.
 3. Print the one-page agreement and sign by hand. Student applicants must also obtain their supervisor's or principal investigator's signature. Other applicants may act as the responsible researcher themselves.
 4. Scan the complete signed page into a legible PDF and email it as an attachment to **cvlina@mail.nwpu.edu.cn** with the subject **TibSenCorpus Data Access Request**. Use your institutional email; if none is available, contact the maintainer before submitting.
 5. After reviewing the signed application, the maintainer will send the archive password if access is approved.
