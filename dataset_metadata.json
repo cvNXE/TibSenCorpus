@@ -1,0 +1,43 @@
+{
+  "dataset": "TibSenCorpus",
+  "version": "1.0.0",
+  "records": 157527,
+  "languages": [
+    "Chinese",
+    "Tibetan"
+  ],
+  "label_order": [
+    "S0",
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+  ],
+  "label_counts": {
+    "S0": 60097,
+    "S1": 40717,
+    "S2": 29866,
+    "S3": 20984,
+    "S4": 5863
+  },
+  "workbook_schema": [
+    {
+      "name": "Sheet1",
+      "columns": [
+        "编号",
+        "中文语料",
+        "主题分类",
+        "特色标签",
+        "传播渠道",
+        "敏感性等级",
+        "藏语翻译"
+      ]
+    }
+  ],
+  "archive": "TibSenCorpus_S0-S4_v1.0.0.7z",
+  "archive_bytes": 43991411,
+  "archive_sha256": "57823fc869870a2f4e7ef4acee3372f0ec601d195e172321c49ed963e5ae4bc3",
+  "encryption": "7z AES-256, encrypted headers",
+  "access": "Non-commercial research; request the password by email.",
+  "contact": "cvlina@mail.nwpu.edu.cn"
+}
