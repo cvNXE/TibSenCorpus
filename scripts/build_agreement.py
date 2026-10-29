@@ -19,9 +19,8 @@ SUBJECT = "TibSenCorpus Data Access Request"
 STEM = "TibSenCorpus_Dataset_Release_Agreement"
 INTRO = (
     "TibSenCorpus is a Tibetan-Chinese parallel corpus for five-level sensitive content "
-    "grading (S0-S4). This agreement records the applicant's research purpose and "
-    "commitment to the conditions below. Access to the unencrypted data is granted "
-    "only after the maintainer has reviewed the completed and signed application."
+    "grading (S0-S4). Access is granted only after the maintainer has reviewed this "
+    "completed and signed agreement. Applicants agree to the following conditions."
 )
 TERMS = [
     ("Non-commercial research", "Use the dataset only for the non-commercial research "
@@ -49,24 +48,20 @@ TERMS = [
      "human review and compliance with applicable data-protection requirements."),
 ]
 SUBMISSION = (
-    "Type the information on page 2, print both pages, sign by hand, and scan the "
-    "complete agreement into one legible PDF. Send it from your institutional email "
-    "address to " + EMAIL + " with the subject '" + SUBJECT + "'. If you do not "
-    "have an institutional address, contact the maintainer before submitting. The "
-    "password will be sent by email after approval. Do not submit signed forms "
-    "through public GitHub issues, pull requests, or commits."
+    "Complete the form, print and sign by hand, then email a legible scan "
+    "of this page from your institutional address to " + EMAIL + ". Subject: '" +
+    SUBJECT + "'. If you have no institutional address, contact the maintainer first. "
+    "The password is sent after approval. Do not post signed forms publicly."
 )
 ROLES = (
     "Student applicants must obtain their supervisor's or principal investigator's "
-    "signature. Other applicants may act as the responsible researcher themselves "
-    "and do not need a separate supervisor signature. Provide a contact email and "
-    "institutional affiliation; do not include identity-document numbers."
+    "signature. Other applicants may act as the responsible researcher themselves; "
+    "a separate supervisor signature is not required."
 )
 DECLARATION = (
-    "I have read both pages and agree to the conditions of use. The information "
-    "provided is accurate, and the dataset will be used only for the stated "
-    "non-commercial research. I will keep the data and password restricted as "
-    "described above. A signed application is subject to review and is not itself approval."
+    "I have read and accept the conditions above. The information provided is "
+    "accurate. I will use the data only for the stated non-commercial research "
+    "and keep the data and password restricted to the approved project."
 )
 SOURCES = [
     ("SUSTech1K release agreement", "https://lidargait.github.io/static/resources/SUSTech1KAgreement.pdf"),
@@ -74,16 +69,15 @@ SOURCES = [
 ]
 
 WIDTH, HEIGHT = A4
-LEFT = 43
+LEFT = 38
 RIGHT = WIDTH - LEFT
 CONTENT = RIGHT - LEFT
-INK = colors.HexColor("#17272C")
-ACCENT = colors.HexColor("#17675E")
-RULE = colors.HexColor("#B9C5C6")
-BODY = ParagraphStyle("body", fontName="Helvetica", fontSize=10,
-                      leading=14, textColor=INK, alignment=TA_LEFT)
-SMALL = ParagraphStyle("small", parent=BODY, fontSize=8.6, leading=11.5)
-LABEL = ParagraphStyle("label", parent=BODY, fontName="Helvetica-Bold", fontSize=9, leading=12)
+INK = colors.black
+RULE = colors.black
+BODY = ParagraphStyle("body", fontName="Times-Roman", fontSize=9.5,
+                      leading=11.5, textColor=INK, alignment=TA_LEFT)
+SMALL = ParagraphStyle("small", parent=BODY, fontSize=8.5, leading=10.2)
+LABEL = ParagraphStyle("label", parent=BODY, fontName="Times-Bold", fontSize=8.6, leading=10)
 
 
 def paragraph(pdf, text, x, top, width=CONTENT, style=BODY):
@@ -94,44 +88,40 @@ def paragraph(pdf, text, x, top, width=CONTENT, style=BODY):
 
 
 def section(pdf, title, top):
-    pdf.setFillColor(ACCENT)
-    pdf.setFont("Helvetica-Bold", 10.5)
-    pdf.drawString(LEFT, top - 11, title)
-    return top - 23
-
-
-def page_header(pdf, subtitle):
-    pdf.setFillColor(ACCENT)
-    pdf.setFont("Helvetica-Bold", 18)
-    pdf.drawString(LEFT, HEIGHT - 45, "TibSenCorpus")
     pdf.setFillColor(INK)
-    pdf.setFont("Helvetica-Bold", 12)
-    pdf.drawString(LEFT, HEIGHT - 65, subtitle)
-    pdf.setFont("Helvetica", 8.5)
-    pdf.drawString(LEFT, HEIGHT - 81, "Non-commercial research access")
-    pdf.drawRightString(RIGHT, HEIGHT - 81, "Version " + POLICY_VERSION + " | " + POLICY_DATE)
-    pdf.setStrokeColor(ACCENT)
-    pdf.setLineWidth(1)
-    pdf.line(LEFT, HEIGHT - 91, RIGHT, HEIGHT - 91)
+    pdf.setFont("Times-Bold", 10)
+    pdf.drawString(LEFT, top - 10, title)
+    return top - 16
 
 
-def footer(pdf, number):
+def page_header(pdf):
+    pdf.setFillColor(INK)
+    pdf.setFont("Times-Bold", 14)
+    pdf.drawCentredString(WIDTH / 2, HEIGHT - 35, "TibSenCorpus Dataset Release Agreement")
+    pdf.setFont("Times-Roman", 9)
+    pdf.drawCentredString(WIDTH / 2, HEIGHT - 49, "Non-commercial Research Use")
+    pdf.setStrokeColor(INK)
+    pdf.setLineWidth(0.6)
+    pdf.line(LEFT, HEIGHT - 57, RIGHT, HEIGHT - 57)
+
+
+def footer(pdf):
     pdf.setStrokeColor(RULE)
     pdf.setLineWidth(0.5)
-    pdf.line(LEFT, 38, RIGHT, 38)
+    pdf.line(LEFT, 28, RIGHT, 28)
     pdf.setFillColor(INK)
-    pdf.setFont("Helvetica", 8)
-    pdf.drawString(LEFT, 25, "TibSenCorpus | Agreement v" + POLICY_VERSION)
-    pdf.drawRightString(RIGHT, 25, str(number) + " / 2")
+    pdf.setFont("Times-Roman", 7.5)
+    pdf.drawString(LEFT, 17, "Version " + POLICY_VERSION + " | " + POLICY_DATE)
+    pdf.drawRightString(RIGHT, 17, "1 / 1")
 
 
-def field(pdf, name, x, y, width, height=22, multiline=False):
+def field(pdf, name, x, y, width, height=18, multiline=False, border=True):
     pdf.acroForm.textfield(
         name=name, tooltip=name.replace("_", " ").title(), value="",
         x=x, y=y, width=width, height=height,
-        fontName="Helvetica", fontSize=9.5, textColor=INK,
-        fillColor=colors.white, borderColor=RULE, borderWidth=0.6,
-        forceBorder=True, fieldFlags="multiline" if multiline else "",
+        fontName="Helvetica", fontSize=8.5, textColor=INK,
+        fillColor=colors.white, borderColor=RULE, borderWidth=0.5 if border else 0,
+        forceBorder=border, fieldFlags="multiline" if multiline else "",
         maxlen=1600 if multiline else 240,
     )
 
@@ -141,53 +131,52 @@ def make_pdf(path):
     pdf.setTitle("TibSenCorpus Dataset Release and Non-commercial Research Agreement")
     pdf.setAuthor("TibSenCorpus")
     pdf.setSubject("Blank research access agreement; handwritten signatures required")
-    page_header(pdf, "Dataset Release and Research Use Agreement")
-    y = section(pdf, "Purpose and release", HEIGHT - 110)
-    y = paragraph(pdf, INTRO, LEFT, y) - 13
+    page_header(pdf)
+    y = paragraph(pdf, INTRO, LEFT, HEIGHT - 69) - 6
     y = section(pdf, "Conditions of use", y)
     for index, (title, body) in enumerate(TERMS, 1):
-        y = paragraph(pdf, "<b>" + str(index) + ". " + title + ".</b> " + body, LEFT, y) - 10
-    y = section(pdf, "How to submit", y)
-    y = paragraph(pdf, SUBMISSION, LEFT, y) - 13
-    y = paragraph(pdf, "<b>Repository:</b> " + REPOSITORY, LEFT, y, style=SMALL) - 8
-    y = paragraph(pdf, "Workflow references: public SUSTech1K and EPHOIE access procedures. "
-                  "The wording is adapted for Tibetan-Chinese text research; no affiliation "
-                  "with either project is implied.", LEFT, y, style=SMALL)
-    if y < 53:
-        raise ValueError("Agreement terms exceed the first page.")
-    footer(pdf, 1)
-    pdf.showPage()
-
-    page_header(pdf, "Applicant Information and Handwritten Signatures")
-    y = paragraph(pdf, ROLES, LEFT, HEIGHT - 111, style=SMALL) - 15
-    y = section(pdf, "Researcher information - type before printing", y)
-    label_width = 98
+        y = paragraph(pdf, "<b>" + str(index) + ". " + title + ".</b> " + body, LEFT, y) - 4
+    y = section(pdf, "Applicant information - type before printing", y + 1)
+    y = paragraph(pdf, ROLES, LEFT, y, style=SMALL) - 6
+    label_width = 91
     column_width = (CONTENT - label_width) / 2
     first = LEFT + label_width
     second = first + column_width
-    paragraph(pdf, "Applicant / point of contact", first + 5, y, column_width - 10, LABEL)
-    paragraph(pdf, "Responsible researcher / supervisor", second + 5, y, column_width - 10, LABEL)
-    y -= 32
+    table_top = y
+    header_height = 23
+    row_height = 21
+    paragraph(pdf, "Information", LEFT + 4, table_top - 6, label_width - 8, LABEL)
+    paragraph(pdf, "Applicant / point of contact", first + 4, table_top - 6, column_width - 8, LABEL)
+    paragraph(pdf, "Responsible researcher / supervisor", second + 4, table_top - 6, column_width - 8, LABEL)
+    table_bottom = table_top - header_height - 6 * row_height
+    y = table_top - header_height
     rows = [("Full name", "name"), ("Institution", "institution"),
             ("Department / lab", "department"), ("Position / role", "position"),
             ("Institutional email", "email"), ("Academic webpage", "webpage")]
     for label, key in rows:
-        paragraph(pdf, label, LEFT, y + 18, label_width - 7, SMALL)
-        field(pdf, "applicant_" + key, first + 4, y, column_width - 8)
-        field(pdf, "responsible_" + key, second + 4, y, column_width - 8)
-        y -= 29
-    y -= 4
-    y = section(pdf, "Proposed research", y + 10)
-    paragraph(pdf, "Project title", LEFT, y, style=LABEL)
-    field(pdf, "project_title", LEFT, y - 37, CONTENT, 22)
-    y -= 51
-    paragraph(pdf, "Research purpose and planned use of TibSenCorpus", LEFT, y, style=LABEL)
-    field(pdf, "research_purpose", LEFT, y - 81, CONTENT, 64, multiline=True)
-    y -= 96
-    y = paragraph(pdf, DECLARATION, LEFT, y, style=SMALL) - 12
-    if y < 165:
-        raise ValueError("Insufficient room for handwritten signatures.")
-    signature_top = min(y - 5, 176)
+        paragraph(pdf, label, LEFT + 4, y - 6, label_width - 8, SMALL)
+        field(pdf, "applicant_" + key, first + 3, y - row_height + 2,
+              column_width - 6, row_height - 4, border=False)
+        field(pdf, "responsible_" + key, second + 3, y - row_height + 2,
+              column_width - 6, row_height - 4, border=False)
+        y -= row_height
+    pdf.setStrokeColor(INK)
+    pdf.setLineWidth(0.5)
+    pdf.rect(LEFT, table_bottom, CONTENT, table_top - table_bottom, fill=0)
+    for x in (first, second):
+        pdf.line(x, table_bottom, x, table_top)
+    for index in range(6):
+        line_y = table_top - header_height - index * row_height
+        pdf.line(LEFT, line_y, RIGHT, line_y)
+    y = table_bottom - 9
+    paragraph(pdf, "Project title", LEFT, y, label_width - 4, LABEL)
+    field(pdf, "project_title", first, y - 16, CONTENT - label_width, 20)
+    y -= 26
+    paragraph(pdf, "Research purpose and planned use", LEFT, y, style=LABEL)
+    field(pdf, "research_purpose", LEFT, y - 45, CONTENT, 32, multiline=True)
+    y -= 53
+    y = paragraph(pdf, DECLARATION, LEFT, y, style=SMALL) - 7
+    signature_top = y
     gap = 24
     half = (CONTENT - gap) / 2
     for x, title in [(LEFT, "Applicant signature (required)"),
@@ -195,12 +184,15 @@ def make_pdf(path):
         paragraph(pdf, title, x, signature_top, half, LABEL)
         pdf.setStrokeColor(INK)
         pdf.setLineWidth(0.7)
-        pdf.line(x, signature_top - 57, x + half, signature_top - 57)
-        pdf.setFont("Helvetica", 8.5)
-        pdf.drawString(x, signature_top - 72, "Date (YYYY-MM-DD): ____________________")
-    paragraph(pdf, "Sign by hand. Email a legible scan of both pages to " + EMAIL + ". "
-              "Do not post completed forms publicly.", LEFT, 70, style=SMALL)
-    footer(pdf, 2)
+        pdf.line(x, signature_top - 35, x + half, signature_top - 35)
+        pdf.setFont("Times-Roman", 8.5)
+        pdf.drawString(x, signature_top - 47, "Date (YYYY-MM-DD): ____________________")
+    y = signature_top - 58
+    y = paragraph(pdf, SUBMISSION, LEFT, y, style=SMALL) - 5
+    y = paragraph(pdf, "Repository: " + REPOSITORY, LEFT, y, style=SMALL)
+    if y < 37:
+        raise ValueError("Single-page layout does not leave enough room for the footer.")
+    footer(pdf)
     pdf.save()
 
 

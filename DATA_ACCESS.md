@@ -8,8 +8,8 @@ TibSenCorpus is made available through controlled password distribution for non-
 
 1. Download the blank [TibSenCorpus Dataset Release Agreement](agreements/TibSenCorpus_Dataset_Release_Agreement.pdf).
 2. Type your name, affiliation, institutional email, and research purpose into the form.
-3. Print both pages and sign by hand. Student applicants must also obtain their supervisor's or principal investigator's signature. Other applicants may act as the responsible researcher themselves.
-4. Scan both pages into a single legible PDF and email it as an attachment to **cvlina@mail.nwpu.edu.cn** with the subject **TibSenCorpus Data Access Request**. Use your institutional email; if none is available, contact the maintainer before submitting.
+3. Print the one-page agreement and sign by hand. Student applicants must also obtain their supervisor's or principal investigator's signature. Other applicants may act as the responsible researcher themselves.
+4. Scan the complete signed page into a legible PDF and email it as an attachment to **cvlina@mail.nwpu.edu.cn** with the subject **TibSenCorpus Data Access Request**. Use your institutional email; if none is available, contact the maintainer before submitting.
 5. After reviewing the signed application, the maintainer will send the archive password if access is approved.
 
 An email-only statement is not a complete application. The signed agreement, not the email template, records acceptance of the access conditions. **Do not upload completed agreements to this public repository or its issues.**
@@ -39,4 +39,4 @@ These projects do not endorse TibSenCorpus. No Creative Commons, MIT, or other t
 
 ## 中文摘要
 
-先填写空白协议，打印后由申请人亲笔签名；学生申请还须由导师或项目负责人签名。将完整两页扫描为一个 PDF，通过邮件发送至 **cvlina@mail.nwpu.edu.cn**。审核通过后提供解压密码。签署文件不得公开上传 GitHub。数据仅供非商业研究，不得向第三方传播明文、样本级副本或密码。允许开展获批项目内的常规预处理、训练与评估；研究发表不得暴露受限原始记录。使用数据时请注明 TibSenCorpus 并引用本仓库。
+先填写黑白单页协议，打印后由申请人亲笔签名；学生申请还须由导师或项目负责人签名。将签署后的完整一页扫描为 PDF，通过邮件发送至 **cvlina@mail.nwpu.edu.cn**。审核通过后提供解压密码。签署文件不得公开上传 GitHub。数据仅供非商业研究，不得向第三方传播明文、样本级副本或密码。允许开展获批项目内的常规预处理、训练与评估；研究发表不得暴露受限原始记录。使用数据时请注明 TibSenCorpus 并引用本仓库。

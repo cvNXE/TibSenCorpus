@@ -4,7 +4,7 @@ Policy version: 1.1 | 29 October 2026
 
 ## Purpose and release
 
-TibSenCorpus is a Tibetan-Chinese parallel corpus for five-level sensitive content grading (S0-S4). This agreement records the applicant's research purpose and commitment to the conditions below. Access to the unencrypted data is granted only after the maintainer has reviewed the completed and signed application.
+TibSenCorpus is a Tibetan-Chinese parallel corpus for five-level sensitive content grading (S0-S4). Access is granted only after the maintainer has reviewed this completed and signed agreement. Applicants agree to the following conditions.
 
 ## Conditions of use
 
@@ -17,11 +17,11 @@ TibSenCorpus is a Tibetan-Chinese parallel corpus for five-level sensitive conte
 
 ## Submission
 
-Type the information on page 2, print both pages, sign by hand, and scan the complete agreement into one legible PDF. Send it from your institutional email address to cvlina@mail.nwpu.edu.cn with the subject 'TibSenCorpus Data Access Request'. If you do not have an institutional address, contact the maintainer before submitting. The password will be sent by email after approval. Do not submit signed forms through public GitHub issues, pull requests, or commits.
+Complete the form, print and sign by hand, then email a legible scan of this page from your institutional address to cvlina@mail.nwpu.edu.cn. Subject: 'TibSenCorpus Data Access Request'. If you have no institutional address, contact the maintainer first. The password is sent after approval. Do not post signed forms publicly.
 
 ## Applicant information
 
-Student applicants must obtain their supervisor's or principal investigator's signature. Other applicants may act as the responsible researcher themselves and do not need a separate supervisor signature. Provide a contact email and institutional affiliation; do not include identity-document numbers.
+Student applicants must obtain their supervisor's or principal investigator's signature. Other applicants may act as the responsible researcher themselves; a separate supervisor signature is not required.
 
 | Information | Applicant / point of contact | Responsible researcher / supervisor |
 | --- | --- | --- |
@@ -38,7 +38,7 @@ Research purpose and planned use: ____________________
 
 ## Declaration and signatures
 
-I have read both pages and agree to the conditions of use. The information provided is accurate, and the dataset will be used only for the stated non-commercial research. I will keep the data and password restricted as described above. A signed application is subject to review and is not itself approval.
+I have read and accept the conditions above. The information provided is accurate. I will use the data only for the stated non-commercial research and keep the data and password restricted to the approved project.
 
 Applicant handwritten signature: ____________________
 
